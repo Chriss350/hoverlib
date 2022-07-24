@@ -1,7 +1,7 @@
 .btn {
   border: 2px solid #2980b9;
   text-decoration: none;
-  padding: 20px 20px;
+
   color: #ecf0f1;
   display: block;
   margin: 20px 0;
@@ -12,9 +12,11 @@
   position: relative;
   overflow: hidden;
   width: 280px;
+
+  line-height: 63px;
   &::before {
     content: "";
-    background: #2980b9;
+    // background: #2980b9;
     position: absolute;
     z-index: -1;
     transition: all 0.6s ease;
@@ -61,6 +63,7 @@
 .btn1::before {
   width: 0;
   height: 100%;
+  background: #2980b9;
 }
 .btn1:hover::before {
   width: 100%;
@@ -69,6 +72,7 @@
 .btn2::before {
   width: 100%;
   height: 0;
+  background: #2980b9;
 }
 .btn2:hover::before {
   height: 100%;
@@ -78,6 +82,7 @@
   width: 100%;
   height: 0;
   transform: translate(-50%, -50%) rotate(-45deg);
+  background: #2980b9;
 }
 
 .btn3:hover::before {
@@ -100,6 +105,7 @@
   top: 0;
   bottom: 0;
   transform: scale(0, 0);
+  background: #2980b9;
 }
 
 .grow:hover::before {
@@ -114,6 +120,7 @@
   bottom: -150%;
   line-height: 8.34em;
   transform: scale(0, 0);
+  background: #2980b9;
 }
 .grow_ellipse:hover::before {
   transform: scale(1, 1);
@@ -125,7 +132,65 @@
   top: 0;
   bottom: 0;
   transform: scale(0, 0) rotate(-180deg);
+  background: #2980b9;
 }
 .grow_spin:hover::before {
   transform: scale(1, 1) rotate(0deg);
+}
+
+.svgDraw {
+  border: none;
+  svg {
+    height: 62px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  rect {
+    fill: none;
+    stroke: #2980b9;
+    stroke-width: 4;
+    stroke-dasharray: 422, 0;
+    transition: all 0.35s linear;
+  }
+  &:hover {
+    rect {
+      stroke-width: 5;
+      stroke-dasharray: 45, 465;
+      stroke-dashoffset: 48;
+      transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
+}
+.svgLine {
+  border: none;
+  padding: 0;
+}
+
+.svgLine:after,
+.svgLine:before {
+  backface-visibility: hidden;
+  border: 1px solid rgba(#2980b9, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.svgLine:hover:after,
+.svgLine:hover:before {
+  backface-visibility: hidden;
+  border-color: #2980b9;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+.svgLine:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
 }
