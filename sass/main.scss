@@ -11,15 +11,96 @@
 
 body {
   background: #95a5a6;
+  font-family: "Montserrat", sans-serif;
 }
 
 .center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
   margin-top: 66px;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  top: 50%;
+}
+
+.demo {
   display: flex;
   flex-direction: row;
   gap: 25px;
+}
+
+dfn {
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: dashed 1px rgba(0, 0, 0, 0.8);
+  padding: 0 0.4em;
+  cursor: help;
+  font-style: normal;
+  position: relative;
+}
+
+dfn::after {
+  content: attr(data-info);
+  display: inline;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  opacity: 0;
+  width: 230px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5em;
+  padding: 0.5em 0.8em;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  pointer-events: none; /* This prevents the box from apearing when hovered. */
+  transition: opacity 250ms, top 250ms;
+}
+dfn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border: solid transparent 5px;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 250ms, top 250ms;
+}
+dfn:hover {
+  z-index: 2;
+} /* Keeps the info boxes on top of other elements */
+dfn:hover::after,
+dfn:hover::before {
+  opacity: 1;
+}
+dfn:hover::after {
+  top: 30px;
+}
+dfn:hover::before {
+  top: 20px;
+}
+
+.spacer {
+  margin: 25px 0;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  color: #ecf0f1;
+  letter-spacing: 0.7px;
+  gap: 30px;
+  &::after,
+  &::before {
+    content: "";
+    height: 3px;
+    width: 150px;
+    background: #ecf0f1;
+  }
 }

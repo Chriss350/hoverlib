@@ -1,6 +1,6 @@
 # In progress
 
-Library with hover efects
+simple library containing examples of hover animations for links simulating buttons
 
 ## Use
 
