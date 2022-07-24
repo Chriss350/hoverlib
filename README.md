@@ -7,3 +7,5 @@ Library with hover efects
 ```sh
 <a href="http://" class="btn grow">Slide grow</a>
 ```
+
+[Demo](https://chriss350.github.io/hoverlib/)
