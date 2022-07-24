@@ -1,7 +1,7 @@
 .btn {
   border: 2px solid #2980b9;
   text-decoration: none;
-  padding: 20px 70px;
+  padding: 20px 20px;
   color: #ecf0f1;
   display: block;
   margin: 20px 0;
@@ -92,4 +92,40 @@
 
 .btn4:hover::before {
   height: 380%;
+}
+
+.grow::before {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0);
+}
+
+.grow:hover::before {
+  transform: scale(1, 1);
+}
+
+.grow_ellipse::before {
+  border-radius: 50%;
+  left: -50%;
+  right: -50%;
+  top: -150%;
+  bottom: -150%;
+  line-height: 8.34em;
+  transform: scale(0, 0);
+}
+.grow_ellipse:hover::before {
+  transform: scale(1, 1);
+}
+
+.grow_spin::before {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0) rotate(-180deg);
+}
+.grow_spin:hover::before {
+  transform: scale(1, 1) rotate(0deg);
 }
