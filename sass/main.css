@@ -45,12 +45,12 @@
 
 .top::before {
   left: 0;
-  bottom: 0;
+  top: 0;
 }
 
 .bottom::before {
   left: 0;
-  top: 0;
+  bottom: 0;
 }
 
 .btn1::before {
